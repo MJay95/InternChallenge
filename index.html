@@ -256,7 +256,7 @@
         </div>
         <div class="modal-footer">
            <br>	<a data-toggle="modal" href="#Katharine3" class="btn btn-primary" id="modal3-next">Next Question</a>
-          <button type="button" class="btn btn-default" data-dismiss="modal" id="grace_hopper_close">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="grace_hopper_close"></button>
         </div>
       </div>
       
@@ -419,6 +419,7 @@
 
       //display first question and choices
       $('#grace_hopper').on('click', function(){
+          $('#grace_hopper_close').html('Close');
           $('#modal3-question').html(questions_array[0]);
           for(var i = 0; i < choices[0].length; i++) {
               $('#modal3-choice' + i).html(choices[0][i]);
@@ -429,10 +430,12 @@
       //display the rest of the questions and choices
       $('#modal3-next').on('click', function(){
 
+          $('#grace_hopper_close').html('Close');
           if(counter == 3){
               $('#modal3-label4').show();
               $('#modal3-label5').show();
               $('#modal3-next').css('display', 'none');
+              $('#grace_hopper_close').html('Submit');
           }
 
           $('#modal3-question').html(questions_array[counter]);
